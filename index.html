@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Personal Budget Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Font Awesome for trash icon (optional) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Personal Budget Tracker</h2>
+
+    <div class="balance">
+      <h3>Balance</h3>
+      <h1 id="balance">$0.00</h1>
+    </div>
+
+    <form id="form" autocomplete="off">
+      <label for="type">Select Type:</label>
+      <select id="type" aria-label="Transaction Type">
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+      </select>
+
+      <label for="category">Select Category:</label>
+      <select id="category" aria-label="Transaction Category">
+        <!-- Dynamically populated by JS -->
+      </select>
+
+      <input type="number" id="amount" placeholder="Enter amount" required min="0.01" step="0.01" />
+      <button type="submit">Add Transaction</button>
+    </form>
+
+    <ul id="transactions"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
